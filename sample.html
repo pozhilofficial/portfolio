@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Your Name</title>
+
+<style>
+:root{
+  --bg:#020617;
+  --card:#0f172a;
+  --accent:#38bdf8;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+html{scroll-behavior:smooth}
+
+body{
+  background:linear-gradient(135deg,#020617,#020617,#0f172a);
+  color:var(--text);
+}
+
+section{padding:90px 10%}
+h1,h2{color:var(--accent)}
+p{color:var(--muted);max-width:800px}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.hero h1{font-size:3.2rem}
+.hero span{color:white}
+
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 30px;
+  background:var(--accent);
+  color:#020617;
+  border-radius:30px;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:14px;
+  margin-top:20px;
+  transition:0.4s;
+  opacity:0;
+  transform:translateY(40px);
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.skill-bar{
+  background:#020617;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:10px;
+}
+
+.skill-fill{
+  height:8px;
+  background:var(--accent);
+  width:0%;
+  transition:1.2s;
+}
+
+.timeline{
+  border-left:2px solid var(--accent);
+  padding-left:30px;
+}
+
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:8px;
+  background:#020617;
+  color:var(--text);
+}
+
+textarea{resize:none;height:120px}
+
+footer{
+  text-align:center;
+  padding:40px;
+  background:#020617;
+}
+
+a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Hello, I'm <span>Pozhilan</span></h1>
+  <p>
+    A passionate student and aspiring software developer, learning by building
+    real-world projects and solving problems.
+  </p>
+  <a href="#contact" class="btn">Hire Me</a>
+  <a href="resume.pdf" class="btn" download style="margin-left:10px">Download Resume</a>
+</section>
+
+<!-- ABOUT -->
+<section>
+<h2>How I Think</h2>
+<div class="card reveal">
+<p>✔ Analyze before coding</p>
+<p>✔ Focus on logic, not shortcuts</p>
+<p>✔ Improve continuously through feedback</p>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section>
+<h2>Skills</h2>
+<div class="grid">
+
+<div class="card reveal">
+<h3>HTML & CSS</h3>
+<p>Responsive UI & layouts</p>
+<div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+</div>
+
+<div class="card reveal">
+<h3>JavaScript</h3>
+<p>Core logic & DOM manipulation</p>
+<div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
+</div>
+
+<div class="card reveal">
+<h3>Problem Solving</h3>
+<p>DSA & logical thinking</p>
+<div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
+</div>
+
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+<h2>Projects</h2>
+<div class="grid">
+
+<div class="card reveal">
+<h3>Personal Portfolio</h3>
+<p><b>Tools:</b> HTML, CSS, JS</p>
+<p><b>Learning:</b> UI & design thinking</p>
+</div>
+
+<div class="card reveal">
+<h3>Calculator App</h3>
+<p><b>Tools:</b> JavaScript</p>
+<p><b>Learning:</b> Logic building</p>
+</div>
+
+</div>
+</section>
+
+<!-- FAILURES -->
+<section>
+<h2>Lessons Learned</h2>
+<div class="card reveal">
+<p>
+Failing early taught me planning and testing are more important than speed.
+</p>
+</div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+<h2>Journey</h2>
+<div class="timeline">
+
+<div class="card reveal">
+<h4>Started</h4>
+<p>Programming fundamentals</p>
+</div>
+
+<div class="card reveal">
+<h4>Built Projects</h4>
+<p>Hands-on experience</p>
+</div>
+
+<div class="card reveal">
+<h4>Now</h4>
+<p>Focused on JS & internships</p>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Me</h2>
+<div class="card reveal">
+
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Your Message"></textarea>
+<button class="btn" type="submit">Send Message</button>
+</form>
+
+<p style="margin-top:20px">
+📧 yourname@email.com <br>
+🔗 github.com/yourname <br>
+🔗 linkedin.com/in/yourname
+</p>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 | Your Name • Built with passion 🚀</p>
+</footer>
+
+<script>
+const reveals=document.querySelectorAll(".reveal");
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+      const bar=entry.target.querySelector(".skill-fill");
+      if(bar){bar.style.width=bar.dataset.width;}
+    }
+  });
+},{threshold:0.2});
+
+reveals.forEach(r=>observer.observe(r));
+</script>
+
+</body>
+</html>

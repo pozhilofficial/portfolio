@@ -1,14 +1,242 @@
-<html>
+<!-- <!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>My portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <h2>Portfolio</h2>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <h1>Hi I am Pozhilan</h1>
-    <h1>😎</h1>
+    <header class="header">
+  <div class="header-content">
+    <h1>Hi, I'm <span class="highlight"><I>POZHILAN L</I></span></h1>
+    <p class="tagline">Full Stack Developer | Building Ideas into Reality</p>
+    <a href="#projects" class="cta-btn">Explore My Work</a>
+  </div>
+</header>
+
+
+</body>
+
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pozhilan L | Full Stack Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+    <style>
+        /* --- Reset & Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f0f1a;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #00f5d4;
+        }
+
+        /* --- Navbar (Level 2.0: Fixed & Improved) --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 15, 26, 0.95);
+            /* Semi-transparent */
+            padding: 15px 50px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid #2a2a40;
+            backdrop-filter: blur(10px);
+            /* Frosted glass effect */
+        }
+
+        .nav-left h2 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .nav-right ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-right a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .nav-right a:hover {
+            color: #00f5d4;
+        }
+
+        /* --- Header (Level 2.0: Animated & Immersive) --- */
+        .header {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #1e1e2f 0%, #0f0f1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            z-index: 10;
+            padding: 0 20px;
+        }
+
+        .header-content h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 35px;
+            color: #a0a0b0;
+            font-weight: 300;
+        }
+
+        .cta-btn {
+            padding: 15px 35px;
+            background: transparent;
+            color: #00f5d4;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #00f5d4;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-btn:hover {
+            background: #00f5d4;
+            color: #0f0f1a;
+            box-shadow: 0 0 20px rgba(0, 245, 212, 0.5);
+            transform: translateY(-3px);
+        }
+
+        /* Background Animation */
+        .circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 245, 212, 0.05);
+            border-radius: 50%;
+            top: 10%;
+            left: 10%;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* --- Content Sections --- */
+        .content-section {
+            padding: 100px 50px;
+            min-height: 50vh;
+            border-bottom: 1px solid #2a2a40;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <h2>P<span class="highlight">L</span></h2>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="header" id="home">
+        <div class="header-content">
+            <h1>Hi, I'm <span class="highlight">Pozhilan L</span></h1>
+            <p class="tagline">Full Stack Developer | Building Functional & Scalable Web Solutions</p>
+            <a href="#projects" class="cta-btn">View My Work</a>
+        </div>
+        <div class="circle"></div>
+    </header>
+
+    <section id="about" class="content-section">
+        <h2>About Me</h2>
+        <p>Introduce yourself and your passion here...</p>
+    </section>
+
+    <section id="projects" class="content-section">
+        <h2>Projects</h2>
+        <p>Showcase your work here...</p>
+    </section>
+
 </body>
 
 </html>
